@@ -17,16 +17,36 @@ cspdiuxX%
 
 #include "ft_printf.h"
 
-int	ft_printf(char const *fmt, ...)
+int	ft_printf(const char *fmt, ...)
 {
-	int	chars_printed;
+	int		i;
 	va_list	args;
-	va_list	args_copy;
 
-	chars_printed = 0;
 	va_start(args, fmt);
-	printf("asdf%s", va_arg(args, char *));
+	i = 0;
+	while (fmt[i] != '\0')
+	{
+		if (fmt[i] == '%')
+		{
+			i++;
+			if (fmt[i] == '%')
+				ft_putchar('%');
+			if (fmt[i] == 'c')
+				ft_putchar(va_arg(args, int));
+			if (fmt[i] == 's')
+				ft_putstr(va_arg(args, char *));
+			if (fmt[i] == 'd')
+				ft_putnbr(va_arg(args, int));
+			//if (fmt[i] == 'p')
+			//if (fmt[i] == 'i')
+			//if (fmt[i] == 'u')
+			//if (fmt[i] == 'x')
+			//if (fmt[i] == 'X')
+		}
+		else if (fmt[i] != '%')
+			write(1, &fmt[i], 1);
+		i++;
+	}
 	va_end(args);
-
-	return (0);
+	return (i);
 }

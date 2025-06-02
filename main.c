@@ -14,6 +14,11 @@
 
 int	main(void)
 {
-	ft_printf("Remember.");
+	int	a;
+
+	a = 42;
+
+	ft_printf("str: %s, char: %c, int: %d, %%", "string", 'C', a);
+	ft_printf("\n");
 	return (0);
 }
