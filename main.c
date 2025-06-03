@@ -18,7 +18,8 @@ int	main(void)
 
 	a = 42;
 
-	//ft_printf("str: %s, char: %c, int: %d, %%\n", "string", 'C', a);
-	printf("str: %s, char: %c, int: %d, %%\n", "string", 'C', a);
+	printf("PRINTF\n%p\n", &a);
+	ft_printf("FT_PRINTF\n%p\n", &a);
+
 	return (0);
 }
