@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:20:14 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/30 07:25:37 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/04 11:04:15 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,6 @@ cspdiuxX%
 */
 
 #include "ft_printf.h"
-
-void	print_addr(void *ptr)
-{
-	unsigned long	addr;
-	char		buffer[17];
-	char		*digits = "0123456789abcdef";
-	int		i;
-
-	ft_putstr("0x");
-	addr = (unsigned long)ptr;
-	if (addr == 0)
-	{
-		ft_putchar('0');
-		return ;
-	}
-	i = 0;
-	while (addr)
-	{
-		buffer[i++] = digits[addr & 0xF];
-		addr >>= 4;
-	}
-	while (i--)
-		ft_putchar(buffer[i]);
-}
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -55,13 +31,13 @@ int	ft_printf(const char *fmt, ...)
 			i++;
 			if (fmt[i] == '%')
 				ft_putchar('%');
-			if (fmt[i] == 'c')
+			else if (fmt[i] == 'c')
 				ft_putchar(va_arg(args, int));
-			if (fmt[i] == 's')
+			else if (fmt[i] == 's')
 				ft_putstr(va_arg(args, char *));
-			if (fmt[i] == 'd')
+			else if (fmt[i] == 'd')
 				ft_putnbr(va_arg(args, int));
-			if (fmt[i] == 'p')
+			else if (fmt[i] == 'p')
 				print_addr(va_arg(args, void *));
 			//if (fmt[i] == 'i')
 			//if (fmt[i] == 'u')

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_addr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 05:23:44 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/04 10:57:42 by asoria           ###   ########.fr       */
+/*   Created: 2025/06/04 09:32:42 by asoria            #+#    #+#             */
+/*   Updated: 2025/06/04 11:02:36 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+void	print_addr(void *ptr)
+{
+	unsigned long	addr;
+	char			buffer[17];
+	char			*digits;
+	int				i;
 
-void	ft_putchar(int n);
-void	ft_putnbr(int n);
-void	ft_putstr(char *str);
-int	ft_printf(char const *fmt, ...);
-void	put_addr(void *ptr);
-
-#endif
+	digits = "0123456789abcdef";
+	ft_putstr("0x");
+	addr = (unsigned long)ptr;
+	if (addr == 0)
+	{
+		ft_putchar('0');
+		return ;
+	}
+	i = 0;
+	while (addr)
+	{
+		buffer[i++] = digits[addr & 0xF];
+		addr >>= 4;
+	}
+	while (i--)
+		ft_putchar(buffer[i]);
+}
