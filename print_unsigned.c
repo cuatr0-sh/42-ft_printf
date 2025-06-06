@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: asoria <asoria@student.42imadrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 07:08:23 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/05 22:48:05 by asoria           ###   ########.fr       */
+/*   Created: 2025/06/05 22:40:25 by asoria            #+#    #+#             */
+/*   Updated: 2025/06/05 22:40:46 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//cspdiuxX%
-
 #include "ft_printf.h"
 
-int	main(void)
+int	ft_print_unsigned(unsigned int num)
 {
-	int	n = -42;
-	char	c = 'C';
-	char	*str = "Hello World!";
-	void	*ptr = &n;
-	
-	printf("PRINTF\n%c%s%p%d%i%u%x%X%%\n", c, str, &ptr, n, n, n, n, n);
-	ft_printf("FT_PRINTF\n%c%s%p%d%i%u%x%X\n", c, str, &ptr, n, n, n, n, n);
+	int	n;
 
-	return (0);
+	n = 0;
+	if (num > 9)
+	{
+		n += ft_print_unsigned(num / 10);
+	}
+	return (n += ft_putchar(num % 10 + '0'));
 }

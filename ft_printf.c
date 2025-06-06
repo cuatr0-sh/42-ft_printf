@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:20:14 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/04 11:04:15 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/05 23:02:45 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ int	ft_printf(const char *fmt, ...)
 		if (fmt[i] == '%')
 		{
 			i++;
-			if (fmt[i] == '%')
-				ft_putchar('%');
-			else if (fmt[i] == 'c')
-				ft_putchar(va_arg(args, int));
+			if (fmt[i] == 'c')
+				return (ft_putchar(va_arg(args, int)));
 			else if (fmt[i] == 's')
-				ft_putstr(va_arg(args, char *));
-			else if (fmt[i] == 'd')
-				ft_putnbr(va_arg(args, int));
+				return (ft_putstr(va_arg(args, char *)));
+			else if (fmt[i] == 'd' || fmt[i] == 'i')
+				return (ft_putnbr(va_arg(args, int)));
 			else if (fmt[i] == 'p')
-				print_addr(va_arg(args, void *));
-			//if (fmt[i] == 'i')
-			//if (fmt[i] == 'u')
-			//if (fmt[i] == 'x')
-			//if (fmt[i] == 'X')
+				return (print_addr(va_arg(args, void *)));
+			else if (fmt[i] == 'u')
+				return (print_unsigned(va_arg(args, unsigned int)));
+			else if (fmt[i] == 'x')
+				return (print_hex(va_arg(args, unsigned int), "0123456789abcdef"));
+			else if (fmt[i] == 'X')
+				print_hex(va_arg(args, unsigned int), "0123456789ABCDEF");
 		}
 		else if (fmt[i] != '%')
 			write(1, &fmt[i], 1);
