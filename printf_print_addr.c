@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_addr.c                                       :+:      :+:    :+:   */
+/*   printf_print_addr.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 09:32:42 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/04 11:02:36 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/07 21:24:11 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_addr(void *ptr)
+void	printf_print_addr(void *ptr)
 {
 	unsigned long	addr;
 	char			buffer[17];

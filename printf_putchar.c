@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_unsigned.c                                   :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoria <asoria@student.42imadrid.com>      +#+  +:+       +#+        */
+/*   By: asoria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/05 22:40:25 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/05 22:40:46 by asoria           ###   ########.fr       */
+/*   Created: 2025/02/18 21:51:58 by asoria            #+#    #+#             */
+/*   Updated: 2025/06/06 21:46:09 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
 
-int	ft_print_unsigned(unsigned int num)
+void	ft_putchar(char c)
 {
-	int	n;
-
-	n = 0;
-	if (num > 9)
-	{
-		n += ft_print_unsigned(num / 10);
-	}
-	return (n += ft_putchar(num % 10 + '0'));
+	write(1, &c, 1);
 }

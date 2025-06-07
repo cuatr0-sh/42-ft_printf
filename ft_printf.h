@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:23:44 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/05 01:03:37 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/07 21:32:01 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 # include <stdio.h>
 # include <unistd.h>
 
-void	ft_putchar(int n);
-void	ft_putnbr(int n);
-void	ft_putstr(char *str);
 int	ft_printf(char const *fmt, ...);
-void	print_addr(void *ptr);
+int	ft_putchar(int n);
+int	ft_putnbr(int n);
+int	ft_putstr(char *str);
+int	print_addr(void *ptr);
+int	print_unsigned(unsigned int n);
+int	print_hex(unsigned int addr, char *dictionary);
 
 #endif

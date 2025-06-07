@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:20:14 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/05 23:02:45 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/07 21:51:09 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_printf(const char *fmt, ...)
 		if (fmt[i] == '%')
 		{
 			i++;
+			switch
 			if (fmt[i] == 'c')
 				return (ft_putchar(va_arg(args, int)));
 			else if (fmt[i] == 's')
@@ -42,10 +43,10 @@ int	ft_printf(const char *fmt, ...)
 			else if (fmt[i] == 'x')
 				return (print_hex(va_arg(args, unsigned int), "0123456789abcdef"));
 			else if (fmt[i] == 'X')
-				print_hex(va_arg(args, unsigned int), "0123456789ABCDEF");
+				return (print_hex(va_arg(args, unsigned int), "0123456789ABCDEF"));
+			else if (fmt[i] != '%')
+				write(1, &fmt[i], 1);
 		}
-		else if (fmt[i] != '%')
-			write(1, &fmt[i], 1);
 		i++;
 	}
 	va_end(args);
