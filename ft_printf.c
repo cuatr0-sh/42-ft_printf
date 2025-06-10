@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:20:14 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/07 21:51:09 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/07 22:10:05 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	ft_printf(const char *fmt, ...)
 		if (fmt[i] == '%')
 		{
 			i++;
-			switch
 			if (fmt[i] == 'c')
 				return (ft_putchar(va_arg(args, int)));
 			else if (fmt[i] == 's')

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hex.c                                        :+:      :+:    :+:   */
+/*   printf_print_hex.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42imadrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 22:39:07 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/05 22:39:48 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/07 22:11:17 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned int nr, char *base)
+int	print_hex(unsigned int nr, char *base)
 {
 	int		nr_base[16];
 	int		i;

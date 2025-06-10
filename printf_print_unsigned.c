@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42imadrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 22:40:25 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/07 21:19:17 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/07 22:10:44 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	print_unsigned(unsigned int num)
 	n = 0;
 	if (num > 9)
 	{
-		n += ft_print_unsigned(num / 10);
+		n += print_unsigned(num / 10);
 	}
 	return (n += ft_putchar(num % 10 + '0'));
 }

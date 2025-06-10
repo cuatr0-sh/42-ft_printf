@@ -6,13 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 09:32:42 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/07 21:24:11 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/10 02:35:26 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	printf_print_addr(void *ptr)
+int	print_addr(void *ptr)
 {
 	unsigned long	addr;
 	char			buffer[17];
@@ -25,7 +25,7 @@ void	printf_print_addr(void *ptr)
 	if (addr == 0)
 	{
 		ft_putchar('0');
-		return ;
+		return (3);
 	}
 	i = 0;
 	while (addr)
