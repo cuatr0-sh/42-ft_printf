@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 09:32:42 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/10 02:35:26 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/11 21:26:37 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ int	print_addr(void *ptr)
 	char			buffer[17];
 	char			*digits;
 	int				i;
+	int				count;
 
 	digits = "0123456789abcdef";
-	ft_putstr("0x");
+	count = 0;
+	count += ft_putstr("0x");
 	addr = (unsigned long)ptr;
 	if (addr == 0)
 	{
-		ft_putchar('0');
+		count += ft_putchar('0');
 		return (3);
 	}
 	i = 0;
@@ -34,5 +36,6 @@ int	print_addr(void *ptr)
 		addr >>= 4;
 	}
 	while (i--)
-		ft_putchar(buffer[i]);
+		count += ft_putchar(buffer[i]);
+	return (count);
 }
