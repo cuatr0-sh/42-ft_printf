@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:20:14 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/14 22:26:41 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/16 02:14:56 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ cspdiuxX%
 
 #include "ft_printf.h"
 
-int	printf_write(char sel, va_list args, int count)
+int	printf_write(char sel, va_list args)
 {
+	int	count;
+
+	count = 0;
 	if (sel == 'c')
 		count += ft_putchar(va_arg(args, int));
 	else if (sel == 's')
@@ -35,8 +38,8 @@ int	printf_write(char sel, va_list args, int count)
 	else if (sel == 'X')
 		count += print_hex(va_arg(args, unsigned int),
 				"0123456789ABCDEF");
-	else if (sel != '%')
-		count += (37);
+	else if (sel == '%')
+		count += ft_putchar('%');
 	return (count);
 }
 
@@ -54,12 +57,12 @@ int	ft_printf(const char *fmt, ...)
 		if (fmt[i] == '%')
 		{
 			i++;
-			count +=printf_write(fmt[i], args, count);
+			count += printf_write(fmt[i], args);
 		}
 		else
 			count += ft_putchar(fmt[i]);
 		i++;
 	}
 	va_end(args);
-	return (i);
+	return (count);
 }
