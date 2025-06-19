@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 05:23:44 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/16 02:14:05 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/18 10:15:42 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	ft_putstr(char *str);
 int	print_addr(void *ptr);
 int	print_unsigned(unsigned int n);
 int	print_hex(unsigned int addr, char *dictionary);
-int     printf_write(char sel, va_list args);
+int	printf_write(char sel, va_list args);
 
 #endif

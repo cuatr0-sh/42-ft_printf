@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 07:08:23 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/16 08:27:01 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/18 10:45:27 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,21 @@
 
 int	main(void)
 {
-	
+	char	c;
+	char	*str;
+	int		n;
+	int		*ptr_to_n;
 	int		count;
-	int		ft_count;
 
-	int	n;
-	
-
-	n = 2147483650;
-	
+	c = 'C';
+	str = "String";
+	n = -42;
+	ptr_to_n = &n;
 	count = 0;
-	ft_count = 0;
-
-	count += printf("%d\n", n);
-	ft_count += ft_printf("%d\n", n);
-	
-	printf("\nCount: %d\n", count);
-	ft_printf("Count: %d\n", count);
-
-	printf("\n");
-
+	printf("Count: %d", c, str, n, ptr_to_n, n, n, n, n, n);
+	printf("Count: %d", printf_count);
+	count = 0;
+	ft_printf("Count: %d", c, str, n, ptr_to_n, n, n, n, n, n);
+	ft_printf("Count: %d", printf_count);
 	return (0);
 }
