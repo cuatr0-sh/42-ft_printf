@@ -26,11 +26,15 @@ int	main(void)
 	str = "String";
 	n = -42;
 	ptr_to_n = &n;
+
 	count = 0;
-	printf("Count: %d", c, str, n, ptr_to_n, n, n, n, n, n);
-	printf("Count: %d", printf_count);
+	printf("PRINTF\n\n");
+	printf("char: %c\nstr: %s\nint(%%d): %d\nptr: %p\nint (%%i)%i\nunsigned: %u\nhex: %x\nHEX: %X\n", c, str, n, ptr_to_n, n, n, n, n);
+	printf("Count: %d\n\n", count);
+	fflush(stdout);
+	
 	count = 0;
-	ft_printf("Count: %d", c, str, n, ptr_to_n, n, n, n, n, n);
-	ft_printf("Count: %d", printf_count);
+	ft_printf("char: %c\nstr: %s\nint(%%d): %d\nptr: %p\nint (%%i)%i\nunsigned: %u\nhex: %x\nHEX: %X\n", c, str, n, ptr_to_n, n, n, n, n);
+	ft_printf("Count: %d\n\n", count);
 	return (0);
 }
