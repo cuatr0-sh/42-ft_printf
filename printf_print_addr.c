@@ -6,11 +6,22 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 09:32:42 by asoria            #+#    #+#             */
-/*   Updated: 2025/06/11 21:26:37 by asoria           ###   ########.fr       */
+/*   Updated: 2025/06/22 20:41:15 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	check_addr(unsigned long addr, int *count)
+{
+	if (addr == 0)
+	{
+		count += ft_putchar('0');
+		return (3);
+	}
+	else
+		return (-1);
+}
 
 int	print_addr(void *ptr)
 {
@@ -26,11 +37,8 @@ int	print_addr(void *ptr)
 	count = 0;
 	count += ft_putstr("0x");
 	addr = (unsigned long)ptr;
-	if (addr == 0)
-	{
-		count += ft_putchar('0');
+	if (check_addr(addr, &count) == 3)
 		return (3);
-	}
 	i = 0;
 	while (addr)
 	{
